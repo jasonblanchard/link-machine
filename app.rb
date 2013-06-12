@@ -18,7 +18,7 @@ get '/hi' do
 end
 
 get '/new' do
-    @current_link = Link.last
+    @current_link = Link.last.url
     erb :new
 end
 
