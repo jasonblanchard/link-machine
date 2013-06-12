@@ -1,0 +1,22 @@
+defaults: &defaults
+    #host: <%= ENV['MONGOID_HOST'] %>
+    #port: <%= ENV['MONGOID_PORT'] %>
+    #username: <%= ENV['MONGOID_USER'] %>
+    #password: <%= ENV['MONGOID_PASS'] %>
+    #database: <%= ENV['MONGOID_DATABASE'] %>
+
+    host: 'localhost'
+    port: 27017
+    #username: <%= ENV['MONGOID_USER'] %>
+    #password: <%= ENV['MONGOID_PASS'] %>
+    database: linkerlogs 
+
+
+development:
+    <<: *defaults
+
+test:
+    <<: *defaults
+        
+production:
+    <<: *defaults
