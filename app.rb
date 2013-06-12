@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'mongoid'
+require 'sinatra/flash'
 
 enable :sessions
 
@@ -18,6 +19,7 @@ end
 
 get '/new' do
     @current_link = Link.last
+    flash[:warning] = 'this is a warning flash'
     erb :new
 end
 
