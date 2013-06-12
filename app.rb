@@ -19,7 +19,6 @@ end
 
 get '/new' do
     @current_link = Link.last
-    flash[:warning] = 'this is a warning flash'
     erb :new
 end
 
@@ -29,8 +28,13 @@ get '/history' do
 end
 
 post '/create' do
-    link = params[:link]
-    Link.create(:url => link)
+    if params[:password] == 'pass'
+        link = params[:link]
+        Link.create(:url => link)
+    else
+        flash[:warning] = 'nope'
+    end
+
     redirect to('/new')
 end
 
