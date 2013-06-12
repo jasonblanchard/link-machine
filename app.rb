@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'mongoid'
 
+enable :sessions
+
 Mongoid.load!("config/mongoid.yml")
 
 class Link
@@ -28,4 +30,9 @@ post '/create' do
     link = params[:link]
     Link.create(:url => link)
     redirect to('/new')
+end
+
+get '/last' do
+    link = Link.last.url
+    redirect to(link)
 end
