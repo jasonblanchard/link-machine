@@ -1,12 +1,14 @@
 <form action='/create' method='post'>
     Link: <input id='link' name='link'>
-    Password: <input id='password' name='password' type='password' value=<%= @password %>>
     <br />
     <input name='submit' type='submit' value='Save Link'>
+    <br />
+    <br />
+    Current Link: <a href="<%= @current_link %>"><%= @current_link %></a>
+    <br />
+    <br />
+    <a href='/history'>history</a>
+    <br />
+    <br />
+    Passcode: <input id='password' name='password' type='password' value=<%= @password %>>
 </form>
-<br />
-<br />
-Current Link: <a href="<%= @current_link %>"><%= @current_link %></a>
-<br />
-<br />
-<a href='/history'>history</a>
