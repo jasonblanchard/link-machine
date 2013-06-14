@@ -18,6 +18,7 @@ get '/hi' do
 end
 
 get '/new' do
+    @password = session[:password] || nil
     @current_link = Link.last.url
     erb :new
 end
@@ -31,6 +32,7 @@ post '/create' do
     if params[:password] == 'pass'
         link = params[:link]
         Link.create(:url => link)
+        session['password'] = params[:password]
     else
         flash[:warning] = 'nope'
     end
