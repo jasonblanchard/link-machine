@@ -18,8 +18,8 @@ get '/hi' do
 end
 
 get '/new' do
-    @password = session[:password] || nil
-    @current_link = Link.last.url
+    @password = session[:password]
+    @current_link = Link.last.url if Link.last
     erb :new
 end
 
