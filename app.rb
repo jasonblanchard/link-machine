@@ -11,6 +11,8 @@ class Link
     include Mongoid::Timestamps
 
     field :url, :type => String
+
+    validates_presence_of :url
 end
 
 get '/hi' do
@@ -30,12 +32,16 @@ end
 
 post '/create' do
     if params[:password] == 'pass'
-        link = params[:link]
-        Link.create(:url => link)
+        url = params[:link]
+        link = Link.new(:url => link)
         session['password'] = params[:password]
     else
         flash[:warning] = 'nope'
+        redirect to('/new')
+        return
     end
+
+    flash[:warning] = 'no link' unless link.save
 
     redirect to('/new')
 end

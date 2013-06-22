@@ -1,0 +1,43 @@
+body {
+    background: rgb(24, 24, 24);
+    color: rgb(85, 78, 165);
+    font-family: 'helvetica neue','sans-serif';
+}
+
+.main-content {
+    margin-top: 60px;
+}
+
+h1.page-title {
+    font-size: 5.5em;
+    margin-top: 0px;
+}
+
+.page-content {
+    padding-left: 100px;
+}
+
+a {
+    color: rgb(170, 170, 170);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(230, 230, 230);
+}
+
+.width30 {
+    width: 30%;
+}
+
+.width50 {
+    width: 50%;
+}
+
+.width70 {
+    width: 70%;
+}
+
+.pull-left {
+    float: left;
+}

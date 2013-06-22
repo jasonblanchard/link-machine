@@ -6,12 +6,21 @@
     </head>
     <body>
 
-        <h1>The Link Machine</h1>
         <div class='notice'>
             <%= styled_flash %>
         </div>
 
-        <%= yield %>
+        <div class='main-content'>
+
+            <div class='width30 pull-left'>
+                <h1 class='page-title'>The <br />Link <br />Machine</h1>
+            </div>
+
+            <div class='width50 pull-left page-content'>
+                <%= yield %>
+            </div>
+
+        </div>
 
     </body>
 </html>
