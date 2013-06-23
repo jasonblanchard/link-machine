@@ -51,6 +51,10 @@ post '/create' do
 
 end
 
+get '/' do
+    redirect to('/last')
+end
+
 get '/last' do
     link = Link.last.url
     redirect to(link)
