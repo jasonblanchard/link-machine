@@ -26,11 +26,14 @@ get '/new' do
 end
 
 get '/history' do
-    @links = Link.desc(:created_at).limit(20).map(&:url)
+    @links = Link.desc(:created_at).map(&:url)
     erb :history
 end
 
 post '/create' do
+
+    Link.desc(:created_at).skip(20).each { |r| r.destroy } if Link.all.to_a.length > 20
+
     if params[:password] == 'pass'
         url = params[:link]
         link = Link.new(:url => url)
