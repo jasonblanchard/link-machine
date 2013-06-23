@@ -34,11 +34,12 @@ post '/create' do
 
     Link.desc(:created_at).skip(20).each { |r| r.destroy } if Link.all.to_a.length > 20
 
-    if params[:password] == 'pass'
+    if params[:password] == ENV['secret']
         url = params[:link]
         link = Link.new(:url => url)
         session['password'] = params[:password]
     else
+        session['password'] = nil
         flash[:warning] = 'nope'
         redirect to('/new')
         return
