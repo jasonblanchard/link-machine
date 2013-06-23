@@ -26,6 +26,29 @@ a:hover {
     color: rgb(230, 230, 230);
 }
 
+.button {
+    background: rgb(235, 235, 235);
+    width: 90px;
+    height: 25px;
+    border: none;
+    border-radius: 2px;
+    color: rgb(85, 78, 165);
+    font-size: .7em;
+    padding-top: 5px;
+}
+
+input {
+    background: rgb(38, 35, 78);
+    border: 1px solid rgb(75, 75, 75);
+    height: 25px;
+    color: rgb(170, 170, 170);
+    font-size: 1em;
+}
+
+.button:hover {
+    background: rgb(182, 182, 182);
+}
+
 .width30 {
     width: 30%;
 }
@@ -40,4 +63,16 @@ a:hover {
 
 .pull-left {
     float: left;
+}
+
+.width300 {
+    width: 300px;
+}
+
+#flash {
+    height: 30px;
+    background: rgb(94, 23, 23);
+    color: rgb(201, 199, 199);
+    padding-top: 8px;
+    padding-left: 10px;
 }

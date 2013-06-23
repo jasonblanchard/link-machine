@@ -33,7 +33,7 @@ end
 post '/create' do
     if params[:password] == 'pass'
         url = params[:link]
-        link = Link.new(:url => link)
+        link = Link.new(:url => url)
         session['password'] = params[:password]
     else
         flash[:warning] = 'nope'
@@ -41,9 +41,14 @@ post '/create' do
         return
     end
 
-    flash[:warning] = 'no link' unless link.save
+    if link.save
+        redirect to('/new')
+        return
+    else
+        flash[:warning] = 'no link'
+        redirect to('/new')
+    end
 
-    redirect to('/new')
 end
 
 get '/last' do
